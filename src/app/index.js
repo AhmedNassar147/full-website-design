@@ -1,16 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
-class App extends React.Component{
-  render(){
-    return(
-      <div>
-        <p>hello react wesite</p>
-      </div>
-    );
-  }
-}
+import { Provider } from 'react-redux';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import store from './store';
+import App from '../container/app';
 
 render(
-  <App />,
+  <Provider store={store}>
+    <MuiThemeProvider>
+      <App />
+    </MuiThemeProvider>
+  </Provider>,
   window.document.getElementById('app')
 );
