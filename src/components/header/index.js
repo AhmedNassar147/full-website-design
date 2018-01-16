@@ -4,33 +4,42 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import { 
   AppBar,
   Avatar,
-  IconMenu,
-  MenuItem,
-  IconButton,
+  ListItem,
  } from 'material-ui';
 
-const Header = (props) => {
-  return(
-    <div>
-      <AppBar 
-        title="Site"
-        iconElementRight={
-          <div>
-            <Avatar style={{ margin: 'auto' }} />
-            <IconMenu
-              iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-              anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-              targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-            >
-              <MenuItem
-                primaryText="SignOut"
-              />
-            </IconMenu>
-          </div>
-        }
-      />
-    </div>
-  );
+class Header extends React.Component {
+  state = {
+    displayValue: 'none',
+  }
+  render(){
+    const { user, maxWidth } = this.props;
+    const { display } = this.state;
+    return(
+      <div>
+        <AppBar
+          title="Site"
+          iconStyleRight={{ margin: 'auto 0px' }}
+          iconElementRight={
+            <span>
+              {!(user && user.length > 0) ? null : (
+                  <span>
+                    {user.map((usrData) => (
+                      <span key={usrData.id}>
+                        <ListItem
+                          primaryText={usrData.name}
+                          leftAvatar={<Avatar src={usrData.image} />}
+                        />
+                        </span>
+                    ))}
+                  </span>
+                )
+              }
+          </span>
+          }
+        />
+      </div>
+    );
+  }
 };
 
 export default Header;

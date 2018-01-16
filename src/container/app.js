@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { CircularProgress } from 'material-ui';
+import { CircularProgress, FlatButton } from 'material-ui';
 import { userData } from './data'; 
 
 import appActions from '../container/appActions';
@@ -12,11 +12,11 @@ class App extends React.Component{
       this.props.onPageloading(userData)
   }
   render(){
-    const { user } = this.props;
+    const { user, maxWidth } = this.props;
     return(
       <div>
         <div>
-          <Header user={user} />
+          <Header user={user} compStyle={maxWidth} />
         </div>
       </div>
     );
@@ -25,12 +25,16 @@ class App extends React.Component{
 
 App.propTypes = {
   onPageloading: PropTypes.func.isRequired,
-}
+  load: PropTypes.bool,
+  user: PropTypes.array,
+  maxWidth: PropTypes.number,
+};
 
 const mapStateToProps = (state) => {
   return {
     user: state.user,
     load: state.load,
+    maxWidth: state.maxWidth,
   }
 }
 
