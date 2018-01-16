@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { CircularProgress } from 'material-ui';
+import { CircularProgress, Paper } from 'material-ui';
 import { userData } from './data'; 
-
 import appActions from '../container/appActions';
 import  Header  from '../components/header';
+import { backgroundImage } from './appStyle';
 class App extends React.Component{
   componentWillMount(){
       setTimeout(() => this.props.onPageloading(userData) ,3000);
@@ -25,6 +25,18 @@ class App extends React.Component{
             <Header
               user={user}
             />
+            <Paper style={backgroundImage}>
+              <p>asdasdasdas</p>
+              <p>asdasdasdas</p>
+              <p>asdasdasdas</p>
+              <p>asdasdasdas</p>
+              <p>asdasdasdas</p>
+              <p>asdasdasdas</p>
+              <p>asdasdasdas</p>
+              <p>asdasdasdas</p>
+              <p>asdasdasdas</p>
+              <p>asdasdasdas</p>
+            </Paper>
           </div>
         )}
       </div>
