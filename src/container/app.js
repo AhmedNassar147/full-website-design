@@ -5,6 +5,7 @@ import { CircularProgress, Paper } from 'material-ui';
 import { userData } from './data'; 
 import appActions from '../container/appActions';
 import  Header  from '../components/header';
+import Products from '../components/products/index';
 import { backgroundImage } from './appStyle';
 class App extends React.Component{
   componentWillMount(){
@@ -25,18 +26,8 @@ class App extends React.Component{
             <Header
               user={user}
             />
-            <Paper style={backgroundImage}>
-              <p>asdasdasdas</p>
-              <p>asdasdasdas</p>
-              <p>asdasdasdas</p>
-              <p>asdasdasdas</p>
-              <p>asdasdasdas</p>
-              <p>asdasdasdas</p>
-              <p>asdasdasdas</p>
-              <p>asdasdasdas</p>
-              <p>asdasdasdas</p>
-              <p>asdasdasdas</p>
-            </Paper>
+            <br />
+            <Products />
           </div>
         )}
       </div>
