@@ -1,6 +1,13 @@
-let urlImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShVE8Wzi1ehtU-5-MdD0Xe53wHLUdom82yAyxeRo0jsJM62C_s';
+let urlImage = 'https://images.pexels.com/photos/515167/pexels-photo-515167.jpeg?w=940&h=650&auto=compress&cs=tinysrgb';
 export const backgroundImage = {
   backgroundImage: 'url(' +`${urlImage}`+ ')',
-  backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  opacity: 0.75,
+  textAlign: 'center'
+};
+
+export const loading ={
+  paddingTop: '10%',
+  textAlign: 'center'
 };

@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { CircularProgress, Paper } from 'material-ui';
-import { userData } from './data'; 
+import { userData, SliderImages } from './data'; 
 import appActions from '../container/appActions';
 import  Header  from '../components/header';
 import Products from '../components/products/index';
-import { backgroundImage } from './appStyle';
+import PageLanding from '../components/pageLanding/index';
+import { backgroundImage, loading } from './appStyle';
 class App extends React.Component{
   componentWillMount(){
       setTimeout(() => this.props.onPageloading(userData) ,3000);
@@ -17,7 +18,7 @@ class App extends React.Component{
     return(
       <div>
         {!user ? (
-          <div style={{ paddingTop: '10%', textAlign: 'center' }}>
+          <div style={loading}>
             <CircularProgress thickness={8} size={80} />
             <h3>Loading....</h3>
           </div>
@@ -26,6 +27,8 @@ class App extends React.Component{
             <Header
               user={user}
             />
+            <br />
+            <PageLanding bckImg={backgroundImage} />
             <br />
             <Products />
           </div>
