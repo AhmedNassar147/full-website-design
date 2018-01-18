@@ -4,7 +4,8 @@ export const backgroundImage = {
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   opacity: 0.75,
-  textAlign: 'center'
+  textAlign: 'center',
+  paddingTop: '29%'
 };
 
 export const loading ={
