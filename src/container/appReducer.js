@@ -1,7 +1,7 @@
 import appTypes from './appTypes';
 const InitialState = ({
   user: {},
-  slides: {},
+  open: false,
 });
 const appReducer = (state = InitialState, action) => {
   switch (action.type) {
@@ -9,12 +9,18 @@ const appReducer = (state = InitialState, action) => {
       return state = {
         ...state,
         user: action.userData,
+        open: false,
       };
-    case appTypes.SET_SLIDER_IMAGES:
+    case appTypes.HANDLE_SNAKBAR_OPEN:
       return state = {
         ...state,
-        slides: action.SliderImages,
-      }
+        open: true,
+      };
+    case appTypes.HANDLE_SNAKBAR_CLOSE:
+      return state = {
+        ...state,
+        open: false,
+      };
     default:
       return state
   }

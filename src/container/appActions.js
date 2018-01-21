@@ -5,8 +5,10 @@ export default {
     type: appTypes.ON_PAGE_LOADING,
     userData,
   }),
-  setSliderImages: (SliderImages)=> ({
-    type: appTypes.SET_SLIDER_IMAGES,
-    SliderImages,
+  handleSnackbarOpen: () => ({
+    type: appTypes.HANDLE_SNAKBAR_OPEN,
+  }),
+  handleSnackbarClose: () => ({
+    type: appTypes.HANDLE_SNAKBAR_CLOSE,
   }),
 }

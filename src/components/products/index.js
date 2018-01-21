@@ -8,16 +8,18 @@ import {
   CardText,
   CardTitle,
   CardActions,
-  FlatButton
+  FlatButton,
+  Snackbar,
 } from 'material-ui';
 
 const Products = (props) => {
-  const { products } = props;
+  const { products, open, handleRequestOpen, handleRequestClose, productStyles } = props;
   if (!products) return console.log('products no props');
+  console.log(open);
   return(
-    <div style={prodContainerStyle}>
+    <div style={productStyles.prodContainerStyle}>
       {products.map((product) => (
-        <div style={productStyle} key={product.id}>
+        <div style={productStyles.prodStyle} key={product.id}>
           <Card>
             <CardHeader
               title={product.Prodheader}
@@ -36,27 +38,30 @@ const Products = (props) => {
             <CardActions>
               <FlatButton
                 label="buy this Product"
-                primary 
+                primary
+                onClick={handleRequestOpen}
               />
             </CardActions>
           </Card>
        </div>
       ))}
+      <div>
+        <Snackbar
+          open={open}
+          message="added to your card"
+          autoHideDuration={3000}
+          onRequestClose={handleRequestClose}
+        />
+      </div>
     </div>
   );
 };
-const prodContainerStyle = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  alignItems: 'center',
-};
 
-const productStyle = {
-  flexShrink: 1,
-  flex: 1,
-  maxWidth: '600px',
-  marginRight: '5px',
-};
+Products.propTypes = {
+  open: PropTypes.bool,
+  handleRequestOpen: PropTypes.func.isRequired,
+  handleRequestClose: PropTypes.func.isRequired,
+  productStyles: PropTypes.object,
+}
 
 export default Products;

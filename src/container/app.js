@@ -9,14 +9,14 @@ import appActions from '../container/appActions';
 import  Header  from '../components/header';
 import Products from '../components/products/index';
 import Carousel from '../components/carousel/index';
-import { backgroundImage, loading, aboutSec } from './appStyle';
+import { loading, productStyles } from './appStyle';
 class App extends React.Component{
   componentWillMount(){
       setTimeout(() => this.props.onPageloading(userData) ,3000);
   };
   
   render(){
-    const { user } = this.props;
+    const { user, open, handleRequestOpen, handleRequestClose } = this.props;
     return(
       <div>
         {!user ? (
@@ -28,7 +28,13 @@ class App extends React.Component{
           <div>
             <Header user={user} />
             <Carousel SliderImages={SliderImages} />
-            <Products products={products} />
+            <Products
+              products={products}
+              productStyles={productStyles}
+              open={open}
+              handleRequestClose={handleRequestClose}
+              handleRequestOpen={handleRequestOpen}
+            />
           </div>
         )}
       </div>
@@ -39,11 +45,15 @@ class App extends React.Component{
 App.propTypes = {
   onPageloading: PropTypes.func.isRequired,
   user: PropTypes.array,
+  open: PropTypes.bool,
+  handleRequestOpen: PropTypes.func.isRequired,
+  handleRequestClose: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
   return {
     user: state.user,
+    open: state.open,
   }
 }
 
@@ -51,6 +61,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onPageloading: (userData) => {
       dispatch(appActions.onPageLoading(userData))
+    },
+    handleRequestOpen: () => {
+      dispatch(appActions.handleSnackbarOpen())
+    },
+    handleRequestClose: () => {
+      dispatch(appActions.handleSnackbarClose())
     },
   }
 }
