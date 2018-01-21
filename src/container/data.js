@@ -7,6 +7,41 @@ export const userData = [
   },
 ];
 
+export const products = [
+ {
+   id: 1,
+   Prodheader: 'Header-1',
+   subtitle: 'Subtitle of header-1',
+   ProdUrl: 'https://wallpaperscraft.com/image/scarlett_johansson_face_lipstick_makeup_bright_hair_64204_3840x2160.jpg',
+   cardTitle: 'Product-1',
+   cardText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.',
+  },
+  {
+    id: 2,
+    Prodheader: 'Header-2',
+    subtitle: 'Subtitle of header-2',
+    ProdUrl: 'https://wallpaperscraft.com/image/scarlett_johansson_face_lipstick_makeup_bright_hair_64204_3840x2160.jpg',
+    cardTitle: 'Product-2',
+    cardText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.',
+   },
+   {
+    id: 3,
+    Prodheader: 'Header-3',
+    subtitle: 'Subtitle of header-3',
+    ProdUrl: 'https://wallpaperscraft.com/image/scarlett_johansson_face_lipstick_makeup_bright_hair_64204_3840x2160.jpg',
+    cardTitle: 'Product-3',
+    cardText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.',
+   },
+   {
+    id: 4,
+    Prodheader: 'Header-4',
+    subtitle: 'Subtitle of header-4',
+    ProdUrl: 'https://wallpaperscraft.com/image/scarlett_johansson_face_lipstick_makeup_bright_hair_64204_3840x2160.jpg',
+    cardTitle: 'Product-4',
+    cardText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.',
+   },
+];
+
 export const SliderImages = [
   {
     id: 1,

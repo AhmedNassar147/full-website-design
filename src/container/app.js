@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { CircularProgress, Paper } from 'material-ui';
-import { userData, SliderImages } from './data'; 
+import { CircularProgress } from 'material-ui';
+
+import { userData, SliderImages, products } from './data';
+
 import appActions from '../container/appActions';
 import  Header  from '../components/header';
 import Products from '../components/products/index';
-import PageLanding from '../components/pageLanding/index';
-import { backgroundImage, loading } from './appStyle';
+import Carousel from '../components/carousel/index';
+import { backgroundImage, loading, aboutSec } from './appStyle';
 class App extends React.Component{
   componentWillMount(){
       setTimeout(() => this.props.onPageloading(userData) ,3000);
@@ -24,13 +26,9 @@ class App extends React.Component{
           </div>
         ) : (
           <div>
-            <Header
-              user={user}
-            />
-            <br />
-            <PageLanding bckImg={backgroundImage} />
-            <br />
-            <Products />
+            <Header user={user} />
+            <Carousel SliderImages={SliderImages} />
+            <Products products={products} />
           </div>
         )}
       </div>

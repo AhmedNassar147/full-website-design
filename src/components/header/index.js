@@ -34,7 +34,7 @@ class Header extends React.Component {
           onLeftIconButtonClick={this.handleOpenDrawer}
           iconElementRight={
             <span style={{ display: 'flex' }}>
-                {(user && user.length > 0) ? (
+              {(user && user.length > 0) ? (
                     <span style={{ flex: 1, paddingTop: '5px' }}>
                       {user.map((usrData) => (
                         <span key={usrData.id}>
