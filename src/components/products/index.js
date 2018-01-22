@@ -15,7 +15,6 @@ import {
 const Products = (props) => {
   const { products, open, handleRequestOpen, handleRequestClose, productStyles } = props;
   if (!products) return console.log('products no props');
-  console.log(open);
   return(
     <div style={productStyles.prodContainerStyle}>
       {products.map((product) => (
